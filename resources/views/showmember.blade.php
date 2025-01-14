@@ -6,30 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
     <title>Document</title>
 </head>
 <body>
-    <h>Checking Member</h>
-    @foreach($memberList as $member)
+    @foreach($ShowList as $show)
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="memberId" placeholder="memberId">
-        <label for="memIdInput">memberId : {{$member->memberId}}</label>
+        <label for="memberIdInput">memberId{{$show->test}}</label>
     </div>
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="name" placeholder="name">
-        <label for="nameInput">name : {{$member->fname." ".$member->lname}}</label>
-
+        <label for="namne">name </label>
     </div>
-    {{-- <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="room" placeholder="room">
-        <label for="roomInput">room :</label>
-    </div> --}}
+    <div class="form-floating mb-3">
+        <input type="text" name="room" id="room" placeholder="room">
+        <label for="roomnumber">Room :</label>
+    </div>
     @endforeach
-
-    {{-- <a href="#"></a>
-    <button type="button" class="btn btn-primary">Submit</button> --}}
-    <button onclick="location.href='http://www.google.com'" type="button" class="btn btn-primary">
-       Submit</button>
+    <a href="#"><button>submit</button></a>
 </body>
 </html>

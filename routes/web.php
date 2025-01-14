@@ -20,4 +20,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/',[MemberController::class,'teststaff']);
 // Route::get('/e',[MemberController::class,'testNames'])->name('member');
 // Route::view('list','member');
-Route::get('list',[MemberController::class,'teststaff']);
+// Route::get('list',[MemberController::class,'teststaff']);
+Route::get('/',[MemberController::class,'getmember']);
+Route::get('/show',[MemberController::class,'ShowAllmember']);
