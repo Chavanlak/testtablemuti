@@ -26,7 +26,7 @@ class MemberController extends Controller
         DB::enableQueryLog();
         $isname = DB::table('mms')
         ->select('fname','lname')
-        ->where('memberId')
+        ->where('staff_code')
         ->get();
         return $isname;
 
@@ -37,12 +37,26 @@ class MemberController extends Controller
         return DB::connection('mysql')->table('mms')->get();
 
     }
-    public static function addMember($room,$datetime){
-         $data = new membertest();
-        $data->room = $room;
-        $data->datetime = now();
-        $data = MemberController::showdisplay();
-        return $data->save();
+    public static function addMember($room,$datetime,$fname,$lname,$staff_code){
+        //  $data = new membertest();
+        // $data->room = $room;
+        // $data->datetime = now();
+        $datetime = Carbon::now();
+        $datetime->datetime = $datetime;
+        $room->room = $room;
+        $fname->fname = $fname;
+        $lname->lname = $lname;
+        $name = $fname." ".$lname;
+        $staff_code->staff_code = $staff_code;
+
+        // return $data->save();
+        if($staff_code == 0){
+            return redirect('/');
+        }
+        if($staff_code == $name){
+            return redirect('/');
+        }
+    
         
     }
   

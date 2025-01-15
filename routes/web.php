@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('member');
-// });
+Route::get('/bg', function () {
+    return view('bg');
+});
 // Route::get('/',[MemberController::class,'teststaff']);
 // Route::get('/e',[MemberController::class,'testNames'])->name('member');
 // Route::view('list','member');
